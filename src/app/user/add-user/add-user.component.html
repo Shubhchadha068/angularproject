@@ -1,0 +1,59 @@
+<mat-card>
+  <h1>Add New User</h1>
+
+  <form (ngSubmit)="onAddUser(userform)" #userform="ngForm"  >
+
+    <mat-form-field>
+      <input type="text" matInput  placeholder="Name" name="username"
+      ngModel
+      required>
+
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input type="email" matInput placeholder="Email" name="email"
+      ngModel
+      required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Contact No" name="Contact"
+      ngModel
+      required>
+    </mat-form-field>
+      <br>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Designation" name="Designation"
+      ngModel
+      required>
+    </mat-form-field>
+      <br>
+    <pre>
+    <button type="submit" mat-raised-button color="primary" >Submit</button> <button type="reset" mat-raised-button color="accent">Reset</button>
+    </pre>
+</form>
+</mat-card>
+<br><br>
+<mat-card>
+  <h1>List of Users</h1>
+  <br>
+  <table class="table">
+    <tr>
+      <th>S.no</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Contact</th>
+      <th>Designation</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let userinfo of Users; let i=index">
+      <td>{{i+1}}</td>
+    <td>{{userinfo.username}}</td>
+    <td>{{userinfo.email}}</td>
+    <td>{{userinfo.Contact}}</td>
+    <td>{{userinfo.Designation}}</td>
+    <td><pre><mat-icon (click)="onEditUser(i)">edit</mat-icon>  <mat-icon (click)="onDeleteUser(i)">delete</mat-icon></pre></td>
+  </tr>
+  </table>
+</mat-card>
+

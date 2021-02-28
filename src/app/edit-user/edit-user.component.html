@@ -1,0 +1,35 @@
+<mat-card>
+  <h1>Edit User Details</h1>
+
+  <form (ngSubmit)="onUpdateUser(updateform)" #updateform="ngForm"  >
+
+    <mat-form-field>
+      <input type="text" matInput  placeholder="Name" name="username"
+      ngModel
+      required>
+
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input type="email" matInput placeholder="Email" name="email"
+      ngModel
+      required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Contact No" name="Contact"
+      ngModel
+      required>
+    </mat-form-field>
+      <br>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Designation" name="Designation"
+      ngModel
+      required>
+    </mat-form-field>
+      <br>
+    <pre>
+    <button type="submit" mat-raised-button color="primary" >Update</button> <button type="reset" mat-raised-button color="accent">Reset</button>
+    </pre>
+</form>
+</mat-card>

@@ -1,0 +1,12 @@
+mat-card
+{
+  width: 25%;
+  margin: auto;
+
+}
+mat-form-field,input{
+  width: 65%;
+}
+
+
+

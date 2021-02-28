@@ -1,0 +1,37 @@
+<mat-card>
+  <h1>Sign In</h1>
+
+  <form #userform="ngForm" (submit)="getValues(userform)" >
+    <mat-form-field>
+      <input type="text" matInput  placeholder="UserName" name="username"
+      [(ngModel)]="users.username"
+      #username="ngModel"
+      required
+      [ngClass]="{'is-invalid':userform.submitted && username.invalid}">
+    </mat-form-field>
+    <mat-error *ngIf="userform.submitted && username.invalid">
+    <mat-error *ngIf="username.hasError('required')">Username is Required</mat-error>
+
+    </mat-error>
+
+    <mat-form-field>
+      <input type="password" matInput placeholder="Password" name="password"
+       [(ngModel)]="users.password"
+       #password="ngModel"
+      required
+      minlength="6"
+      [ngClass]="{'is-invalid':userform.submitted && password.invalid}">
+    </mat-form-field>
+    <mat-error *ngIf="userform.submitted && password.invalid">
+    <mat-error *ngIf="password.hasError('required')">Password is Required</mat-error>
+    <mat-error *ngIf="password.hasError('minlength')">Password should be upto 6 characters </mat-error>
+
+    </mat-error>>
+
+    <br>
+    <pre>
+    <button type="submit" mat-raised-button color="primary" >Submit</button> <button type="reset" mat-raised-button color="accent">Reset</button>
+
+  </pre>
+</form>
+</mat-card>
